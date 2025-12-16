@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const lesson = lessonsData.find(l => l.id === id);
             if (lesson) {
                 renderLessonDetail(lesson);
+                initLightbox();
             } else {
                 alert('Lesson not found!');
                 window.location.href = 'index.html';
@@ -84,8 +85,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     <p>${step.content}</p>
                     ${step.slideImage ? `
                         <div class="step-slide-container">
-                            <span class="slide-label"><i class="fas fa-image"></i> Minh họa:</span>
-                            <img src="${step.slideImage}" alt="Slide hướng dẫn" class="step-slide-img" loading="lazy">
+                            <span class="slide-label"><i class="fas fa-image"></i> Minh họa (Nhấn để phóng to):</span>
+                            <img src="${step.slideImage}" alt="${step.title}" class="step-slide-img" loading="lazy">
                         </div>
                     ` : ''}
                 </div>
@@ -99,6 +100,43 @@ document.addEventListener('DOMContentLoaded', () => {
                 const item = header.parentElement;
                 item.classList.toggle('active');
             });
+        });
+    }
+
+    function initLightbox() {
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const captionText = document.getElementById('lightbox-caption');
+        const closeBtn = document.querySelector('.lightbox-close');
+
+        if (!lightbox) return;
+
+        // Add click event to all slide images
+        document.querySelectorAll('.step-slide-img').forEach(img => {
+            img.addEventListener('click', function () {
+                lightbox.style.display = "flex";
+                lightboxImg.src = this.src;
+                captionText.innerHTML = this.alt;
+            });
+        });
+
+        // Close when clicking X
+        closeBtn.onclick = function () {
+            lightbox.style.display = "none";
+        }
+
+        // Close when clicking outside image
+        lightbox.onclick = function (e) {
+            if (e.target === lightbox) {
+                lightbox.style.display = "none";
+            }
+        }
+
+        // Close on Escape key
+        document.addEventListener('keydown', function (event) {
+            if (event.key === "Escape") {
+                lightbox.style.display = "none";
+            }
         });
     }
 });
