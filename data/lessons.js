@@ -963,41 +963,42 @@ o Gợi ý SUMIF: =SUMIF(Cột_Mã_DV, "DN", Cột_Thành_Tiền)`,
             {
                 id: 121,
                 sessionId: 12,
-                title: "Bài 1: AI cho Word (Soạn thảo văn bản)",
-                description: "Học cách sử dụng Gemini để soạn thảo, chỉnh sửa, tóm tắt và chuẩn hóa văn bản.",
+                title: "Bài 1: Ôn tập & Sáng tạo với NotebookLM & Gemini",
+                description: "Tăng tốc ôn tập và sáng tạo nội dung: Từ tổng hợp kiến thức với NotebookLM đến soạn thảo 'Bí kíp ôn thi' với phần mở rộng Gemini trong Word/Docs.",
                 tasks: [
                     { name: "Bài tập thực hành (PDF)", file: "../DeBaiThucHanh/Bài tập_AI for Word.pdf" },
                     { name: "Bài tập thực hành (DOCX)", file: "../DeBaiThucHanh/Bài tập_AI for Word.docx" }
                 ],
                 docs: [
                     { name: "Slide bài giảng (Full)", file: "Gemini for Word_full.pdf" },
-                    { name: "Bài tập thực hành (PDF)", file: "../DeBaiThucHanh/Bài tập_AI for Word.pdf" }
+                    { name: "Hướng dẫn thực hành (TXT)", file: "../DeBaiThucHanh/Bài tập_AI for Word.txt" },
+                    { name: "Tài liệu 6 Module (PDF)", file: "https://drive.google.com/file/d/1edPV-QAhEDF4giIcHpPgMQylI1nD6ih7/view?usp=sharing" }
                 ],
                 steps: [
                     {
-                        title: "1. Chuẩn bị & Khởi động",
-                        content: "**Bước 1:** Mở file **'Bài tập_AI for Word.docx'** (hoặc PDF) trong thư mục thực hành.\n**Bước 2:** Mở Gemini (gemini.google.com) hoặc ChatGPT.\n**Mục tiêu:** Sử dụng AI để giải quyết lần lượt các yêu cầu trong file bài tập.",
-                        icon: "fa-play-circle"
+                        title: "1. Khởi động: Tư duy mới về AI",
+                        content: "**Chuyển dịch tư duy:**\n- Từ “người thực hiện” -> “người ra lệnh và biên tập”.\n\n**Công thức Prompt PTCF:**\n- **P (Persona):** Vai trò (Bạn là giảng viên, chuyên gia...)\n- **T (Task):** Nhiệm vụ (Viết đề cương, tóm tắt...)\n- **C (Context):** Bối cảnh (Dựa trên tài liệu module 4...)\n- **F (Format):** Định dạng (Bảng, danh sách...)",
+                        icon: "fa-brain"
                     },
                     {
-                        title: "Bài tập 1: Soạn thảo văn bản mới",
-                        content: "**Tình huống:** Bạn cần viết một thư mời họp hoặc một thông báo nội bộ.\n**Thực hành:**\n1. Copy yêu cầu từ bài tập.\n2. Nhập Prompt vào Gemini: \"Hãy đóng vai một chuyên viên hành chính, soạn thảo một thư mời tham dự cuộc họp tổng kết năm...\"\n3. Copy kết quả từ Gemini dán vào file Word.",
+                        title: "2. Demo NotebookLM: 'Trợ lý nghiên cứu'",
+                        content: "**Thao tác:**\n1. Upload file **'Tài liệu AI Ứng dụng 6 module đầu.pdf'** (trong mục Tài liệu) lên NotebookLM.\n2. **Source Guide:** Xem tóm tắt và câu hỏi gợi ý.\n\n**Bài tập thực hành Chat:**\n- \"Dựa trên file 6 module vừa upload, hãy liệt kê các kỹ năng quan trọng nhất cần có của một công dân số.\"\n- *Lưu ý:* Kiểm tra trích dẫn (citations) để đảm bảo độ chính xác.",
+                        icon: "fa-database"
+                    },
+                    {
+                        title: "3. Demo Gemini & Prompting: 'Trợ lý viết lách'",
+                        content: "**Kịch bản:** Từ ý chính rút ra ở NotebookLM, dùng Gemini để viết đề cương.\n\n**Áp dụng PTCF:**\n- `[P]`: Bạn là giảng viên môn Kỹ năng số.\n- `[T]`: Hãy viết đề cương ôn tập.\n- `[C]`: Dựa trên các ý chính về an toàn dữ liệu.\n- `[F]`: Trình bày dạng bảng so sánh ưu nhược điểm.\n\n**Tình huống không có Gemini Pro:** Dùng bản web (gemini.google.com), copy prompt vào, sau đó copy kết quả dán về Google Docs.",
                         icon: "fa-pen-nib"
                     },
                     {
-                        title: "Bài tập 2: Viết lại & Thay đổi giọng văn",
-                        content: "**Tình huống:** Đoạn văn bản hiện tại quá dài dòng hoặc không phù hợp với ngữ cảnh.\n**Thực hành:**\n1. Copy đoạn văn bản 'cần sửa' trong file bài tập.\n2. Prompt: \"Viết lại đoạn văn sau cho ngắn gọn, súc tích hơn: [Dán văn bản]\"\n3. Hoặc: \"Chuyển đoạn văn này sang giọng văn trang trọng/thân thiện.\"",
-                        icon: "fa-sync-alt"
+                        title: "4. Thực hành tổng hợp kiến thức",
+                        content: "**Bài tập 1: Xây dựng 'Kho tri thức ôn thi'**\n- Tạo Notebook \"Ôn thi Giữa kỳ\" -> Upload 6 module -> Xem Source Guide.\n\n**Bài tập 2: Truy vấn & Tạo Flashcards**\n- Prompt: \"Tìm trong tài liệu các định nghĩa về [Khái niệm khó]. Giải thích cho sinh viên năm nhất.\"\n- Yêu cầu tạo Flashcards/Quiz để tự kiểm tra.",
+                        icon: "fa-tasks"
                     },
                     {
-                        title: "Bài tập 3: Tóm tắt & Dịch thuật",
-                        content: "**Tình huống:** Bạn có một báo cáo dài cần nắm ý chính nhanh.\n**Thực hành:**\n1. Copy toàn bộ nội dung báo cáo trong bài tập.\n2. Prompt: \"Tóm tắt văn bản trên thành 5 ý chính quan trọng nhất.\"\n3. Prompt dịch: \"Dịch đoạn tóm tắt trên sang tiếng Anh dành cho đối tác nước ngoài.\"",
-                        icon: "fa-language"
-                    },
-                    {
-                        title: "Bài tập 4: Chuẩn hóa định dạng",
-                        content: "**Tình huống:** Dữ liệu lộn xộn cần chuyển thành bảng.\n**Thực hành:**\n1. Copy danh sách nhân sự/sản phẩm trong file.\n2. Prompt: \"Chuyển danh sách sau thành dạng bảng (Table) có các cột: Họ tên, Chức vụ, Phòng ban...: [Dán danh sách]\"\n3. Copy bảng từ Gemini và dán vào Word.",
-                        icon: "fa-table"
+                        title: "5. Thực hành Sáng tạo & Tinh chỉnh",
+                        content: "**Bài tập 3: Soạn thảo 'Bí kíp ôn thi'**\n- Dùng Gemini viết tài liệu tóm tắt 1-2 trang.\n- Áp dụng PTCF đầy đủ 4 yếu tố.\n\n**Bài tập 4: Kỹ thuật Tinh chỉnh**\n- Dùng lệnh **Shorten** (Rút gọn) để làm 'phao thi'.\n- Dùng lệnh **Change Tone** (Đổi giọng) sang hài hước.",
+                        icon: "fa-magic"
                     }
                 ]
             },
